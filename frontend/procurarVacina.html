@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<html lang="pt-BR">
+<head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invernada - O Rebanho na Palma da Mão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+        /* Estilos básicos para o dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-btn {
+            <!--background-color: #4CAF50; -->
+            color: white;
+            padding: 0px 0px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Para dispositivos móveis, pode ser melhor usar clique em vez de hover */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Cabeçalho -->
+    <header class="bg-emerald-600 text-white shadow-lg fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="paginaInicial.html"  <h1 class="text-2xl font-bold">Invernada</h1> </a>
+            <nav class="flex space-x-4">
+			<a href="paginaInicial.html" class="hover:text-emerald-200 transition-colors">Inicio</a>
+			
+			<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Animais</button>
+    <div class="dropdown-content">
+        <a href="paginaCadastro.html">Adicionar Animais</a>
+        <a href="listadeAnimais.html">Procurar Animais</a>
+    </div>
+	</div>
+			
+			<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Vacinas</button>
+    <div class="dropdown-content">
+        <a href="procurarVacina.html">Procurar Vacina</a>
+        <a href="cadastrarVacina.html">Adicionar Vacina</a>
+    </div>
+	</div>
+			
+		<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Inseminação</button>
+    <div class="dropdown-content">
+        <a href="paginadeInseminacao.html">Registrar Inseminação</a>
+        <a href="paginaHistoricoReprodutivo.html">Histórico Reprodutivo</a>
+        <a href="registrodeParto.html">Registro de Parto</a>
+       
+    </div>
+	</div>
+			
+                  <a href="index.html" class="hover:text-emerald-200 transition-colors">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow pt-20 pb-20">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invernada - O Rebanho na Palma da Mão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-12">
+    <div class="container mx-auto px-4">
+        
+        <div class="bg-white rounded-lg p-6 shadow-lg max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Buscar Vacinas</h2>
+            <form id="formBusca" class="space-y-4">
+                <div>
+                    <label for="busca" class="block text-sm font-medium text-gray-700 mb-2">Buscar por ID ou Nome do Animal</label>
+                    <input type="text" id="busca" name="busca" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600" placeholder="Digite o ID ou Nome">
+                </div>
+                <div class="flex justify-center space-x-4">
+                    <button type="button" onclick="history.back()" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">Sair</button>
+                    <button type="button" onclick="clearForm()" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">Limpar</button>
+                    <button type="submit" class="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Buscar Vacinas</button>
+                </div>
+            </form>
+            <div id="resultado" class="mt-6 text-center">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Lista de Vacinas</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-300 rounded-lg">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">Id Animal</th>
+                                <th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">Vacina</th>
+								<th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">Data Aplicação</th>
+								<th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">Data Próxima Aplicacação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vacinaTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+	
+    <script>
+        
+        // Lista fictícia de vacinas
+        var vacinas = [];
+
+        // Função para exibir a lista de vacinas
+        function displayVacinas(vacinasFiltrados) {
+            const tableBody = document.getElementById('vacinaTableBody');
+            tableBody.innerHTML = '';
+            if (vacinasFiltrados.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="2" class="py-2 px-4 border-b text-gray-700 text-center">Nenhum vacina encontrado</td>
+                    </tr>
+                `;
+                return;
+            }
+            vacinasFiltrados.forEach(vacina => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="py-2 px-4 border-b text-gray-700">${vacina.identificadorAnimal}</td>
+                    <td class="py-2 px-4 border-b text-gray-700">${vacina.nome}</td>
+					<td class="py-2 px-4 border-b text-gray-700">${vacina.dataAplicacao}</td>
+					<td class="py-2 px-4 border-b text-gray-700">${vacina.dataProxAplicacao}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Função para limpar o formulário e restaurar a lista completa
+        function clearForm() {
+            document.getElementById('formBusca').reset();
+           carregarvacinas(); // Exibe todos os vacinas         
+            }
+
+        // Manipulação do formulário de busca
+        document.getElementById('formBusca').addEventListener('submit', function(event) {
+            event.preventDefault();
+           carregarvacinas();
+        });
+
+        function carregarvacinas(){
+            $.ajax({
+            url: 'http://localhost:8080/api/vacinas/animal/'+$('#busca').val().trim(),
+            method: 'GET',
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function(response) {
+            vacinas = response;
+                 displayVacinas(response);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                 displayVacinas([]);
+            }
+            });
+        }
+
+     
+    </script>
+	<footer class="fixed bottom-0 w-full bg-white border-t border-gray-200">
+            <div class="flex justify-around p-4">
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-home text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-search text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-user text-xl"></i>
+                </button>
+             
+            </div>
+        </footer>
+		
+</body>
+</html>

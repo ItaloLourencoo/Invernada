@@ -1,0 +1,263 @@
+ <!DOCTYPE html>
+<html lang=pt-BR>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invernada - O Rebanho na Palma da Mão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>	    
+
+<style>
+        /* Estilos básicos para o dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-btn {
+            <!--background-color: #4CAF50; -->
+            color: white;
+            padding: 0px 0px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Para dispositivos móveis, pode ser melhor usar clique em vez de hover */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Cabeçalho -->
+    <header class="bg-emerald-600 text-white shadow-lg fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="paginaInicial.html"  <h1 class="text-2xl font-bold">Invernada</h1> </a>
+            <nav class="flex space-x-4">
+			<a href="paginaInicial.html" class="hover:text-emerald-200 transition-colors">Inicio</a>
+			
+			<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Animais</button>
+    <div class="dropdown-content">
+        <a href="paginaCadastro.html">Adicionar Animais</a>
+        <a href="listadeAnimais.html">Procurar Animais</a>
+    </div>
+	</div>
+			
+			<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Vacinas</button>
+    <div class="dropdown-content">
+        <a href="procurarVacina.html">Procurar Vacina</a>
+        <a href="cadastrarVacina.html">Adicionar Vacina</a>
+    </div>
+	</div>
+			
+	<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Inseminação</button>
+    <div class="dropdown-content">
+        <a href="paginadeInseminacao.html">Registrar Inseminação</a>
+        <a href="paginaHistoricoReprodutivo.html">Histórico Reprodutivo</a>
+        <a href="registrodeParto.html">Registro de Parto</a>
+    </div>
+	</div>
+			
+                  <a href="index.html" class="hover:text-emerald-200 transition-colors">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow pt-20 pb-20">
+ 
+ <!-- Botão Sair 
+<form action="/logout" method="POST" class="absolute top-5 right-4">
+  <button 
+    type="submit" 
+    class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition-all duration-200"
+  >
+    Sair
+  </button>
+</form> -->
+ 
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> 
+            
+			
+			<a href="paginaCadastro.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow cursor-pointer block">
+			
+			   
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-emerald-100 p-3 rounded-full">
+                            <i class="fas fa-plus text-emerald-600 text-xl"></i>
+                        </div>
+                        <h2 class="text-lg font-semibold text-gray-800">Novo Registro</h2>
+                    </div>
+                    <p class="text-gray-600 text-sm">Adicione um novo animal</p>
+                </a>
+
+                <a href="listadeAnimais.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow cursor-pointer block">
+				
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <i class="fas fa-list text-blue-600 text-xl"></i>
+                        </div>
+                        <h2 class="text-lg font-semibold text-gray-800">Lista de Animais</h2>
+                    </div>
+                    <p class="text-gray-600 text-sm">Visualize e genrencie os animais</p>
+                </a>
+
+
+
+        <a href="calendario_vacinas.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow cursor-pointer block">
+    <div class="flex items-center justify-between mb-4">
+        <div class="bg-purple-100 p-3 rounded-full">
+            <i class="fas fa-calendar-alt text-purple-600 text-xl"></i>
+        </div>
+        <h2 class="text-lg font-semibold text-gray-800">Calendário de Vacinação</h2>
+    </div>
+    <p class="text-gray-600 text-sm">Acompanhe o calendário de vacinação</p>
+</a>
+
+
+                <a href="paginadeInseminacao.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow cursor-pointer block">
+			  			 
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-orange-100 p-3 rounded-full">
+                            <i class="fas fa-clipboard-list text-orange-600 text-xl"></i>
+                        </div>
+       <h2 class="text-lg font-semibold text-gray-800">Inseminação</h2>
+                    </div>
+                    <p class="text-gray-600 text-sm">Monitorar registros de inseminação</p>
+               </a>
+			
+			<div class="mt-8 bg-white rounded-lg shadow-md p-6" style="width: 100%;">
+			<h2 class="text-xl font-bold text-gray-800 mb-4">Atividades Recentes</h2>
+			<div class="space-y-4">
+  
+                    <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e" alt="Cattle" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Novo Animal Cadastrado</h3>
+                            <p class="text-sm text-gray-600">Tag #A123 - Mimosa</p>
+                        </div>
+                        <span class="ml-auto text-sm text-gray-500">2h ago</span>
+                    </div>
+
+                    <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9" alt="Cattle" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-800"Vacinção completa</h3>
+                            <p class="text-sm text-gray-600">Tag #B456 - Perola</p>
+                        </div>
+                        <span class="ml-auto text-sm text-gray-500">5h ago</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="fixed bottom-0 w-full bg-white border-t border-gray-200">
+            <div class="flex justify-around p-4">
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-home text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-search text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-user text-xl"></i>
+                </button>
+             
+            </div>
+        </footer>
+    </div>
+
+ 
+
+
+    <script src="script.js"></script>
+</body>
+    </div>
+
+<div id="paginaVacinas" class="min-h-screen hidden bg-gray-50 pt-20 pb-32">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Buscar Animais</h2>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                             <label class="block text-sm font-medium text-gray-700 mb-2">Nome do Animal</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                        </div> 
+                        
+                       <body class="bg-gray-100">
+    <div class="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+       <h1 class="text-xl font-bold text-gray-800 mb-6">Buscar Animal</h1> -->
+	   
+	    <div class="flex justify-center space-y-4-x-4"> <!-- Espaço horizontal entre os botões -->
+        <form id="formBusca" class="space-y-50"> <!-- Aumenta o espaço entre os elementos do formulário -->
+            <div>
+    <!-- Updated: JavaScript for page switching -->
+    <script>
+        function showDashboard() {
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('dashboardPage').style.display = 'block';
+            document.getElementById('paginadeRegistroAnimal').style.display = 'none';
+        }
+
+        function registrarAnimal() {
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('dashboardPage').style.display = 'none';
+            document.getElementById('paginadeRegistroAnimal').style.display = 'block';
+        }
+		
+		function listadeAnimais() {
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('dashboardPage').style.display = 'none';
+            document.getElementById('paginaListadeAnimais').style.display = 'block';
+        }
+		
+		function procVacina() {
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('dashboardPage').style.display = 'none';
+            document.getElementById('paginaVacinas').style.display = 'block';
+        }
+		
+		
+    </script>
+</body>
+</html>

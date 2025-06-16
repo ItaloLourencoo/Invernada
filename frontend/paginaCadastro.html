@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invernada - O Rebanho na Palma da Mão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+        /* Estilos básicos para o dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-btn {
+          
+            color: white;
+            padding: 0px 0px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Para dispositivos móveis, pode ser melhor usar clique em vez de hover */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Cabeçalho -->
+    <div class="bg-emerald-600 text-white shadow-lg fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="paginaInicial.html"> <h1 class="text-2xl font-bold">Invernada</h1> </a>
+            <nav class="flex space-x-4">
+			<a href="paginaInicial.html" class="hover:text-emerald-200 transition-colors">Inicio</a>
+			
+			<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Animais</button>
+    <div class="dropdown-content">
+        <a href="paginaCadastro.html">Adicionar Animais</a>
+        <a href="listadeAnimais.html">Procurar Animais</a>
+    </div>
+	</div>
+			
+			<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Vacinas</button>
+    <div class="dropdown-content">
+        <a href="procurarVacina.html">Procurar Vacina</a>
+        <a href="cadastrarVacina.html">Adicionar Vacina</a>
+    </div>
+	</div>
+			
+		<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Inseminação</button>
+    <div class="dropdown-content">
+        <a href="paginadeInseminacao.html">Registrar Inseminação</a>
+        <a href="paginaHistoricoReprodutivo.html">Histórico Reprodutivo</a>
+        <a href="registrodeParto.html">Registro de Parto</a>
+       
+    </div>
+	</div>
+			
+                  <a href="index.html" class="hover:text-emerald-200 transition-colors">Sair</a>
+            </nav>
+        </div>
+    </div>
+
+    
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-12">
+    <div id="paginadeRegistroAnimal" class="container mx-auto px-4">
+       
+        <div class="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Cadastro de Animais</h2>
+            <form id="formCadastro" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Nome do Animal</label>
+                        <input type="text" id="nome" name="nome" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                    </div>
+                    <div>
+                        <label for="raca" class="block text-sm font-medium text-gray-700 mb-2">Raça</label>
+                        <select id="raca" name="raca" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                            <option value="Nelore">Nelore</option>
+                            <option value="Angus">Angus</option>
+                            <option value="Brahman">Brahman</option>
+                            <option value="Gir">Gir</option>
+                            <option value="Holandês">Holandês</option>
+                            <option value="Jersey">Jersey</option>
+                            <option value="Simental">Simental</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dataNascimento" class="block text-sm font-medium text-gray-700 mb-2">Data de Nascimento</label>
+                        <input type="date" id="dataNascimento" name="dataNascimento" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                    </div>
+					<div>
+                        <label for="pesoId" class="block text-sm font-medium text-gray-700 mb-2">Peso</label>
+                        <input type="number" id="pesoId" name="pesoId" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label for="maeId" class="block text-sm font-medium text-gray-700 mb-2">Mãe (Número de Identificação)</label>
+                        <input type="text" id="maeId" name="maeId" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label for="paiId" class="block text-sm font-medium text-gray-700 mb-2">Pai (Número de Identificação)</label>
+                        <input type="text" id="paiId" name="paiId" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label for="sexo" class="block text-sm font-medium text-gray-700 mb-2">Sexo</label>
+                        <select id="sexo" name="sexo" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                            <option value="FEMEA">Fêmea</option>
+                            <option value="MACHO">Macho</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="numeroId" class="block text-sm font-medium text-gray-700 mb-2">Número de Identificação</label>
+                        <input type="text" id="numeroId" name="numeroId" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-4 mt-6">
+				<button type="button" onclick="history.back()" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">Sair</button>
+                    <button type="button" onclick="clearForm()" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">limpar</button>
+                    <button type="submit" class="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Cadastrar Animal</button>
+                </div>
+            </form>
+            <div id="mensagemCadastro" class="mt-6 text-center text-gray-700"></div>
+        </div>
+    </div>
+	
+	<footer class="fixed bottom-0 w-full bg-white border-t border-gray-200">
+            <div class="flex justify-around p-4">
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-home text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-search text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-user text-xl"></i>
+                </button>
+             
+            </div>
+        </footer>
+	
+    <script>
+        // Função para limpar o formulário e a mensagem
+        function clearForm() {
+            document.getElementById('formCadastro').reset();
+            document.getElementById('mensagemCadastro').innerHTML = '';
+        }
+
+        // Manipulação do formulário de cadastro
+        document.getElementById('formCadastro').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const animal = {
+                nome: document.getElementById('nome').value,
+                raca: document.getElementById('raca').value,
+                dataNascimento: document.getElementById('dataNascimento').value,
+                maeId: document.getElementById('maeId').value || 'Não informado',
+                paiId: document.getElementById('paiId').value || 'Não informado',
+                sexo: document.getElementById('sexo').value,
+                peso: document.getElementById('pesoId').value,
+                numeroId: document.getElementById('numeroId').value
+            };
+
+            console.log(animal)
+
+
+            $.ajax({
+                url: 'http://localhost:8080/api/animals',
+                method: 'POST',
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify({
+                    nome: animal.nome,
+                    raca: animal.raca,
+                    dataNascimento: animal.dataNascimento,
+                    numeroIdentificacaoPai: animal.paiId,
+                    numeroIdentificacaoMae: animal.maeId,
+                    sexo: animal.sexo,
+                    numeroIdentificacao: animal.numeroId,
+                    dataCadastro: new Date().toISOString(),
+                    dataAtualizacao: new Date().toISOString(),
+                    usuarioIdCriacao: 1,
+                    peso: animal.peso
+                }),
+                success: function(response) {
+                    document.getElementById('mensagemCadastro').innerHTML = `
+                    <p>Animal cadastrado com sucesso!</p>
+                    <p><strong>Nome:</strong> ${animal.nome}</p>
+                    <p><strong>Número de Identificação:</strong> ${animal.numeroId}</p>
+                    <p><strong>Raça:</strong> ${animal.raca}</p>
+                    <p><strong>Data de Nascimento:</strong> ${animal.dataNascimento}</p>
+                    <p><strong>Sexo:</strong> ${animal.sexo}</p>
+                    <p><strong>Mãe (ID):</strong> ${animal.maeId}</p>
+                    <p><strong>Pai (ID):</strong> ${animal.paiId}</p>
+            `;
+            document.getElementById('formCadastro').reset();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error("Erro na requisição:", textStatus, errorThrown);
+                }
+                });
+
+
+            // Exemplo de feedback (substitua por lógica real, como envio para uma API)
+            
+            
+        });
+
+        $('#pesoId').on('input', function () {
+                 let valor = $(this).val();
+
+                // Remove tudo que não for número ou ponto
+                valor = valor.replace(/[^0-9.]/g, '');
+
+                // Garante apenas um ponto decimal
+                const partes = valor.split('.');
+                if (partes.length > 2) {
+                    valor = partes[0] + '.' + partes[1]; // descarta os outros
+                }
+
+                // Limita a 2 casas decimais se houver ponto
+                if (valor.includes('.')) {
+                    const [inteiro, decimal] = valor.split('.');
+                    valor = inteiro + '.' + decimal.slice(0, 2);
+                }
+
+                $(this).val(valor);
+                });
+
+    </script>
+</body>
+</html>

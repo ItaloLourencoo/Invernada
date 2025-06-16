@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invernada - O Rebanho na Palma da Mão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+        /* Estilos básicos para o dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-btn {
+            <!--background-color: #4CAF50; -->
+            color: white;
+            padding: 0px 0px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Para dispositivos móveis, pode ser melhor usar clique em vez de hover */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Cabeçalho -->
+    <header class="bg-emerald-600 text-white shadow-lg fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="paginaInicial.html"  <h1 class="text-2xl font-bold">Invernada</h1> </a>
+            <nav class="flex space-x-4">
+			<a href="paginaInicial.html" class="hover:text-emerald-200 transition-colors">Inicio</a>
+			
+			<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Animais</button>
+    <div class="dropdown-content">
+        <a href="paginaCadastro.html">Adicionar Animais</a>
+        <a href="listadeAnimais.html">Procurar Animais</a>
+    </div>
+	</div>
+			
+			<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Vacinas</button>
+    <div class="dropdown-content">
+        <a href="procurarVacina.html">Procurar Vacina</a>
+        <a href="cadastrarVacina.html">Adicionar Vacina</a>
+    </div>
+	</div>
+			
+		<div	class="dropdown" id="meuDropdown"><button class="dropdown-btn">Inseminação</button>
+    <div class="dropdown-content">
+        <a href="paginadeInseminacao.html">Registrar Inseminação</a>
+        <a href="paginaHistoricoReprodutivo.html">Histórico Reprodutivo</a>
+        <a href="registrodeParto.html">Registro de Parto</a>
+       
+    </div>
+	</div>
+			
+                  <a href="index.html" class="hover:text-emerald-200 transition-colors">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow pt-20 pb-20">
+	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invernada - O Rebanho na Palma da Mão</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<footer class="fixed bottom-0 w-full bg-white border-t border-gray-200">
+            <div class="flex justify-around p-4">
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-home text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-search text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-user text-xl"></i>
+                </button>
+             
+            </div>
+        </footer>
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Vacinação Bovina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .note {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calendário de Vacinação Bovina</h1>
+    <table>
+        <tr>
+            <th>Vacina</th>
+            <th>Idade/Periodicidade</th>
+            <th>Detalhes</th>
+        </tr>
+        <tr>
+            <td>Brucelose</td>
+            <td>Fêmeas de 3 a 8 meses</td>
+            <td>Obrigatória apenas para fêmeas nesta faixa etária. Não vacinar após 8 meses devido ao risco de resultado positivo no diagnóstico, levando à condenação do animal.</td>
+        </tr>
+        <tr>
+            <td>Aftosa</td>
+            <td>Conforme calendário regional</td>
+            <td>Obrigatória, aplicada de acordo com as determinações dos órgãos de defesa sanitária de cada região do país.</td>
+        </tr>
+        <tr>
+            <td>Carbúnculo Sintomático</td>
+            <td>Todos os animais acima de 3 meses, a cada 6 meses até 2 anos</td>
+            <td>Obrigatória. Animais até 2 anos são mais suscetíveis. A doença afeta principalmente animais com melhores escores corporais.</td>
+        </tr>
+        <tr>
+            <td>Raiva</td>
+            <td>Anual</td>
+            <td>Importante, especialmente em regiões com surtos, onde grande parte do rebanho pode ser afetada.</td>
+        </tr>
+        <tr>
+            <td>Outras (Leptospirose, IBR, BVD, Mastite, Campilobacteriose, Colibacilose, etc.)</td>
+            <td>Conforme indicação veterinária</td>
+            <td>Não obrigatórias, mas recomendadas conforme o manejo e situação específica, sob orientação de um veterinário.</td>
+        </tr>
+    </table>
+    <div class="note">
+        <p><strong>Observação:</strong> O calendário de vacinação deve ser ajustado conforme as recomendações de um veterinário e as particularidades de cada região e rebanho.</p>
+    </div>
+	
+	<div class="flex justify-center space-x-4 mt-6">
+				<button type="button" onclick="history.back()" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">Sair</button>
+
+
+		 <a href="cadastrarVacina.html" <button type="button" class="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">Cadastrar nova vacina</button>
+	 </a>			
+			
+        
+      </div>
+    </form>
+    <p id="msgCadastro" class="mt-4 text-green-600 font-medium text-center"></p>
+  </div>
+</body>
+</html>
+		
+  <script>
+    // Lista global de vacinas
+    const vacinas = [
+      { animalId: 1, nomeAnimal: "Rex", vacina: "Antirrábica", dataAplicacao: "2025-05-01", proximaAplicacao: "2026-05-01" },
+      { animalId: 1, nomeAnimal: "Rex", vacina: "V10", dataAplicacao: "2024-12-01", proximaAplicacao: "2025-12-01" },
+      { animalId: 2, nomeAnimal: "Luna", vacina: "V8", dataAplicacao: "2025-01-10", proximaAplicacao: "2026-01-10" }
+    ];
+
+    // CADASTRO DE VACINAS
+    document.getElementById("formCadastroVacina").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const animalId = parseInt(document.getElementById("cadAnimalId").value);
+      const nomeAnimal = document.getElementById("cadNomeAnimal").value.trim();
+      const vacina = document.getElementById("cadVacina").value.trim();
+      const dataAplicacao = document.getElementById("cadDataAplicacao").value;
+      const proximaAplicacao = document.getElementById("cadProximaAplicacao").value;
+
+      if (isNaN(animalId) || !nomeAnimal || !vacina || !dataAplicacao || !proximaAplicacao) {
+        alert("Preencha todos os campos corretamente.");
+        return;
+      }
+
+      vacinas.push({ animalId, nomeAnimal, vacina, dataAplicacao, proximaAplicacao });
+
+      document.getElementById("msgCadastro").innerText = "Vacina cadastrada com sucesso!";
+      this.reset();
+    });
+
+    // BUSCA DE VACINAS
+    document.getElementById("formBuscaVacinas").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const idBusca = parseInt(document.getElementById("id").value);
+      const resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.innerHTML = "";
+
+      const vacinasAnimal = vacinas.filter(v => v.animalId === idBusca);
+
+      if (vacinasAnimal.length === 0) {
+        resultadoDiv.innerHTML = `<p class="text-red-500">Nenhum registro de vacinação encontrado para o ID informado.</p>`;
+        return;
+      }
+
+      // Ordenar por data de aplicação (mais recente primeiro)
+      vacinasAnimal.sort((a, b) => new Date(b.dataAplicacao) - new Date(a.dataAplicacao));
+      const ultima = vacinasAnimal[0];
+
+      resultadoDiv.innerHTML = `
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Informações de Vacinação</h2>
+        <table class="min-w-full table-auto border border-gray-300">
+          <thead class="bg-emerald-600 text-white">
+            <tr>
+              <th class="px-4 py-2">ID</th>
+              <th class="px-4 py-2">Nome</th>
+              <th class="px-4 py-2">Última Vacina</th>
+              <th class="px-4 py-2">Data da Última</th>
+              <th class="px-4 py-2">Próxima Vacinação</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr>
+              <td class="border px-4 py-2">${ultima.animalId}</td>
+              <td class="border px-4 py-2">${ultima.nomeAnimal}</td>
+              <td class="border px-4 py-2">${ultima.vacina}</td>
+              <td class="border px-4 py-2">${ultima.dataAplicacao}</td>
+              <td class="border px-4 py-2">${ultima.proximaAplicacao}</td>
+            </tr>
+          </tbody>
+        </table>
+      `;
+    });
+  </script>
+   
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang=pt-BR>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invernada - O Rebanho na Palma da Mão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Added: Login page container -->
+   <div id="loginPage" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-800 to-emerald-600 p-4">
+        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-emerald-800">Invernada</h1>
+                <p class="text-gray-600 mt-2">Faça login na sua conta</p>
+            </div>
+            
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="email">Endereço de e-mail</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" required>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="password">Senha</label>
+                    <input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" required>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" class="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded">
+                        <label for="remember" class="ml-2 block text-sm text-gray-700">lembre se mim</label>
+                    </div>
+                    <a href="#" class="text-sm text-emerald-600 hover:text-emerald-500">Esqueceu a senha?</a>
+                </div>
+                
+                <button type="button" onclick="criarLogin()" class="w-full bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 transition duration-200">Entrar</button>
+            </form>
+            </a>
+            <p class="text-center mt-6 text-sm text-gray-600">
+                Não tem uma conta? 
+                <a href="cadastro_usuario.html" class="text-emerald-600 hover:text-emerald-500 font-semibold">Cadastro</a>
+            </p>
+        </div>
+    </div>
+
+      
+    <script>
+        function criarLogin() {
+
+            var email = $('#email').val().trim();
+            var senha = $('#password').val().trim();
+            
+
+            if (!email || !senha) {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+        
+
+            $.ajax({
+                url: 'http://localhost:8080/api/usuarios/login',
+                method: 'POST',
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify({
+                email: email,
+                senha: senha
+                }),
+                success: function(response) {
+                    window.location.href = "paginaInicial.html";
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                     alert("E-mail ou senha invalidos");
+                }
+            });
+            }    
+
+
+    </script>
+</body>
+</html>
